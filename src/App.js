@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import "normalize-css/normalize.css"
 import './App.scss';
 
@@ -24,7 +24,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <nav >
           <ul className="tabs">
             <li className="list">
