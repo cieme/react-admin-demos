@@ -1,0 +1,24 @@
+$tabbarHeight: 100px;
+.tabbar {
+  width: 100vw;
+  height: $tabbarHeight;
+  padding-bottom:constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+
+  &-list {
+    height: $tabbarHeight;
+    background-color: #fff;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0 40px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    bottom:constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+  }
+
+  &-item {
+    text-align: center;
+  }
+}

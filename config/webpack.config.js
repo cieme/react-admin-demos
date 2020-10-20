@@ -86,7 +86,7 @@ module.exports = function (webpackEnv) {
       {
         loader: require.resolve('px2rem-loader'),
         options: {
-          remUnit: 100,
+          remUnit: 37.5,
           remPrecision: 8
         },
       },
