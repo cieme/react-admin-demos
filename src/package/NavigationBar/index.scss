@@ -1,11 +1,37 @@
-$navigationBarHeight: 100px;
 
 .navBar {
-  height: $navigationBarHeight;
+  height: $navigation-bar-height;
   width: 100vw;
 
   &-fixed {
     position: fixed;
-    height: $navigationBarHeight;
+    height: $navigation-bar-height;
+    width: 100vw;
+    background-color: $primary-background-color;
   }
+
+  &-icon {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 60px;
+    margin: 0 5px;
+
+    &.icondirection-left {
+      font-weight: bold;
+    }
+
+    &.icongengduo {
+      font-size: 60px;
+    }
+  }
+
+  &-title {
+    font-size: 36px;
+    font-weight: 400;
+    color: #000;
+    line-height: 50px;
+  }
+
 }

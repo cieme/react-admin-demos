@@ -26,6 +26,7 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
+const { Z_PARTIAL_FLUSH } = require('zlib');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -464,13 +465,18 @@ module.exports = function (webpackEnv) {
             {
               test: sassRegex,
               exclude: sassModuleRegex,
-              use: getStyleLoaders(
-                {
+              use: [
+                ...getStyleLoaders({
                   importLoaders: 4,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'sass-loader'
-              ),
+                }, 'sass-loader'),
+                {
+                  loader: 'style-resources-loader',
+                  options: {
+                    patterns: path.resolve(__dirname, "../src/assets/styles/var.scss")
+                  }
+                }
+              ],
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.

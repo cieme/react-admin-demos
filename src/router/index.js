@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route,  BrowserRouter as Router } from 'react-router-dom'
 import TabbarHoc from '../hoc/tabbar'
-import PageHoc from '../hoc/page'
+// import PageHoc from '../hoc/page'
 
 import Index from '../views/Index'
 
