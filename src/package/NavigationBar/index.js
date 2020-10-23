@@ -31,7 +31,7 @@ export default class NavigationBar extends Component {
     } = this.props
 
     const getIconClass = (leftIconType) => {
-      let iconClass = "navBar-icon iconfont "
+      let iconClass = "iconfont "
       if (leftIconType === 'back') {
         iconClass += 'icondirection-left'
       }
@@ -40,16 +40,20 @@ export default class NavigationBar extends Component {
     return (
       <div className="navBar">
         <div className="navBar-fixed align-items">
-          {
-            leftIcon ? (<div className={getIconClass(leftIconType)}></div>) : null
-          }
+          <div className="navBar-icon">
+            {
+              leftIcon ? (<div className={getIconClass(leftIconType)}></div>) : null
+            }
+          </div>
           <div className="navBar-title flex-1 align-items justify-center">
             {/* <div className="navBar-icon prefix-icon"></div> */}
             <div>{title}</div>
           </div>
-          {
-            rightIcon ? (<div className="navBar-icon iconfont icongengduo"></div>) : null
-          }
+          <div className="navBar-icon">
+            {
+              rightIcon ? (<div className="iconfont icongengduo"></div>) : null
+            }
+          </div>
         </div>
       </div>
     )
