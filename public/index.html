@@ -39,5 +39,21 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 </body>
-
+<script>
+  appendCDN('http://at.alicdn.com/t/font_1847302_lf9w6i7pzdd.css')
+  function appendCDN(src) {
+    var head = document.head || document.getElementsByTagName('head')[0];
+    if(src.indexOf("js")== -1){ //css
+        var style = document.createElement('style');
+        style.setAttribute("rel", "stylesheet"); 
+        style.setAttribute("href",src);
+        head.appendChild(style);
+    }else{
+        var script = document.createElement('script');
+        script.type = "text/javascript";
+        script.setAttribute("src",src);
+        head.appendChild(script);
+    }
+}
+</script>
 </html>

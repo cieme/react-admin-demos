@@ -1,4 +1,11 @@
-.navigationbar {
-  height: 100px;
+$navigationBarHeight: 100px;
+
+.navBar {
+  height: $navigationBarHeight;
   width: 100vw;
+
+  &-fixed {
+    position: fixed;
+    height: $navigationBarHeight;
+  }
 }
