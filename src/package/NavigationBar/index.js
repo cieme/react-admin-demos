@@ -22,6 +22,9 @@ export default class NavigationBar extends Component {
       
     }
   }
+  componentDidMount() {
+    
+  }
   render() {
     const {
       title,
@@ -57,5 +60,8 @@ export default class NavigationBar extends Component {
         </div>
       </div>
     )
+  }
+  getNavigationBarInfo = (navInfo) => {
+    
   }
 }
