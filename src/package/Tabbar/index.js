@@ -12,7 +12,7 @@ export default class Tabbar extends Component {
           {/* <div className="tabbar-item">首页</div>
           <div className="tabbar-item">通讯录</div>
           <div className="tabbar-item">发现</div>
-          <div className="tabbar-item">我</div> */}
+          <div className="tabbar-item">我</div> */} 
           <Router>
             
         {tabbar.map((item, index) => (<Fragment key={index}><Route path={item.path}>{item.text}</Route></Fragment>))}
