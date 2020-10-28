@@ -1,68 +1,178 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# weblog
 
-## Available Scripts
+## 项目介绍
 
-In the project directory, you can run:
+该项目为一个社交app项目，前端主要使用的`react`,  `redux`, `react-router`, `react-router-dom`
 
-### `yarn start`
+如下图所示：
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="./src/assets/images/ui-1.jpg" alt="视觉稿" style="zoom:50%;" />
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<img src="./src/assets/images/ui-2.jpg" alt="视觉稿" style="zoom:50%;" />
 
-### `yarn test`
+<img src="./src/assets/images/ui-3.jpg" alt="视觉稿" style="zoom:50%;" />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 项目结构
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```markdown
+|-- weblog
+    |-- .gitignore
+    |-- package.json
+    |-- yarn.lock
+    |-- config					webpack配置文件
+    |   |-- env.js
+    |   |-- getHttpsConfig.js
+    |   |-- modules.js
+    |   |-- paths.js
+    |   |-- pnpTs.js
+    |   |-- webpack.config.js
+    |   |-- webpackDevServer.config.js
+    |   |-- jest
+    |       |-- cssTransform.js
+    |       |-- fileTransform.js
+    |-- public
+    |   |-- favicon.ico
+    |   |-- index.html
+    |-- scripts
+    |   |-- build.js
+    |   |-- start.js
+    |   |-- test.js
+    |-- src
+        |-- index.js
+        |-- index.scss
+        |-- api
+        |   |-- index.js
+        |-- assets
+        |   |-- images
+        |   |   |-- .gitkeep
+        |   |-- styles			项目中统一使用sass，并且var中会用于定义变量，后期便于主题修改
+        |       |-- reset.scss
+        |       |-- var.scss
+        |-- hoc					用于存放高阶
+        |   |-- page
+        |   |   |-- index.js
+        |   |-- tabbar
+        |       |-- index.js
+        |-- package				用于存放通用组件，通常与业务无关
+        |   |-- .gitkeep
+        |   |-- NavigationBar
+        |   |   |-- index.js
+        |   |   |-- index.scss
+        |   |-- Tabbar
+        |       |-- index.js
+        |       |-- index.scss
+        |-- router				路由文件，app的tabbar在此处只是为了便于渲染
+        |   |-- index.js
+        |   |-- tabbar.js
+        |-- store				redux存放，统一管理是不希望过于松散不便管理
+        |   |-- index.js
+        |   |-- action-type
+        |   |   |-- index.js
+        |   |-- reducer
+        |       |-- index.js
+        |-- utils				所有的工具方法可以放于此处，包括之后使用的axios或fetch
+        |   |-- index.js
+        |-- views				视图文件夹
+            |-- Index
+                |-- index.js
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 启动方式
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+git clone https://github.com/cieme/react-admin-demos
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 启动本地服务 一般端口为3000
+npm run start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 打包指令
+npm run build
 
-### Code Splitting
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## 项目规划
 
-### Advanced Configuration
+- 登录注册
+- 首页
+  - 微博列表
+    - 关注列表/推荐列表
+    - 关注博主
+    - 点赞
+    - 评论 -- 点击进入详情页，滚动至评论区域
+    - 不感兴趣
+    - 收藏
+  - 新建一篇微博内容
+    - 图片/视频上传
+    - 尝试使用emoji
+    - @好友
+    - 定位
+    - #话题
+    - 设置权限 --谁可见
+      - 公开
+      - 粉丝
+      - 仅自己
+  - 微博详情
+    - 关注
+    - 分享给好友 -- weblog好友
+    - 评论
+    - 点赞
+    - 不感兴趣
+    - 评论点赞
+    - 评论折叠/展开
+- 搜索
+  - 搜索历史
+  - 热搜 -- 可由后台设置
+  - 模糊搜索
+    - 搜索项：综合，用户，同城，话题
+- 消息
+  - 点赞消息
+  - @我的
+  - 聊天消息列表
+    - 可滑动删除
+  - 消息内容 -- socket.io
+  - 消息设置
+    - 拉黑聊天
+- 个人中心
+  - 个人信息展示
+    - 发文数量
+      - 个人微博列表
+        - ...功能与首页的类似
+    - 关注数量
+      - 关注列表
+        - 取关
+        - 点击进入对方主页
+    - 粉丝数
+      - 列表
+        - 关注
+        - 点击进入对方主页
+        - 拉黑
+    - 我的相册
+      - 即发文使用的图片库
+    - 我赞别人的
+      - 列表
+    - 我的收藏
+    - 我的黑名单
+    - 设置
+      - 账号管理	
+      - 修改密码
+      - 更换昵称，头像
+      - 关于我们
+      - 退出登录
+  - 个人主页
+    - ...就不列举了
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+> 只是列举了一下功能，并不是要全部完成，量力而行即可，
+>
+> 有的功能可能没有图，可以抄weibo或者任意自己喜欢的产品
