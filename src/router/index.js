@@ -11,27 +11,29 @@ import TabbarHoc from '../hoc/tabbar'
 // component
 import Index from '../views/Index'
 import Mine from '../views/Mine'
+import AuthRoute from '../utils/authRoute'
 
 
 
 export default class AppRouter extends Component {
-  getUserConfirmation = (message, callback) => {
-    // const allowTransition = window.confirm(message)
-    callback(message)
-  }
+  // getUserConfirmation = (message, callback) => {
+  //   const allowTransition = window.confirm(message)
+  //   callback(message)
+  // }
   render() {
-    const message = this
+    // const message = this
     return (
       <Provider store={store}>
-        <Router getUserConfirmation={ this.getUserConfirmation(message, (e) => console.log(e)) }>
+        {/* getUserConfirmation={ this.getUserConfirmation(message, (e) => console.log(e)) } */}
+        <Router>
           <Route path="/index" component={
             TabbarHoc(Index)
           } >
           </Route>
-          <Route path="/mine" component={
+
+          <AuthRoute path="/mine" component={
             TabbarHoc(Mine)
-          } >
-          </Route>
+          }></AuthRoute>
         </Router>
       </Provider>
     )
