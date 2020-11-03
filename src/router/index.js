@@ -10,14 +10,26 @@ import TabbarHoc from '../hoc/tabbar'
 
 // component
 import Index from '../views/Index'
+import Mine from '../views/Mine'
+
+
 
 export default class AppRouter extends Component {
+  getUserConfirmation = (message, callback) => {
+    // const allowTransition = window.confirm(message)
+    callback(message)
+  }
   render() {
+    const message = this
     return (
       <Provider store={store}>
-        <Router>
+        <Router getUserConfirmation={ this.getUserConfirmation(message, (e) => console.log(e)) }>
           <Route path="/index" component={
             TabbarHoc(Index)
+          } >
+          </Route>
+          <Route path="/mine" component={
+            TabbarHoc(Mine)
           } >
           </Route>
         </Router>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
+import { withRouter } from 'react-router-dom'
 
-export default class NavigationBar extends Component {
+class NavigationBar extends Component {
   static defaultProps = {
     title: '微信',
     leftIcon: true,
@@ -45,7 +46,7 @@ export default class NavigationBar extends Component {
         <div className="navBar-fixed align-items">
           <div className="navBar-icon">
             {
-              leftIcon ? (<div className={getIconClass(leftIconType)}></div>) : null
+              leftIcon ? (<div className={getIconClass(leftIconType)} onClick={ this.navTo }></div>) : null
             }
           </div>
           <div className="navBar-title flex-1 align-items justify-center">
@@ -64,4 +65,9 @@ export default class NavigationBar extends Component {
   getNavigationBarInfo = (navInfo) => {
     
   }
+  navTo = () => {
+    this.props.history.push('/index')
+  }
 }
+
+export default withRouter(NavigationBar)

@@ -9,6 +9,6 @@ import { reducer } from "./reducer";
 // 创建仓库
 const store = createStore(combineReducers({
   reducer
-}), 10);
+}))
 
 export default store
