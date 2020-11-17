@@ -1,5 +1,7 @@
 export const tabbar = [{
-  path: '/index',
+  path: '/',
   text: '首页'
+}, {
+  path: '/mine',
+  text: '我的'
 }]
-  

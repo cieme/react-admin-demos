@@ -1,0 +1,50 @@
+{
+  "package": "http://localhost:3000/",
+  "name": "react-admin-demos",
+  "version": "1.2",
+  "versionCode": 3,
+  "versionName": "1.2",
+  "minPlatformVersion": 100,
+  "icon": "/public/favicon.ico",
+  "features": [
+    {
+      "name": "com.miui.hybrid.features.Network"
+    },
+    {
+      "name": "system.fetch"
+    },
+    {
+      "name": "system.storage"
+    },
+    {
+      "name": "system.prompt"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {
+    "logLevel": "debug"
+  },
+  "router": {
+    "entry": "Home",
+    "pages": {
+      "Home": {
+        "component": "home"
+      }
+    }
+  },
+  "display": {
+    "backgroundColor": "#ffffff",
+    "titleBar": true,
+    "titleBarBackgroundColor": "#ff5073",
+    "titleBarTextColor": "#ffffff",
+    "pages": {
+      "Home": {
+        "titleBarText": "美柚"
+      }
+    }
+  }
+}

@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 
 export default class Index extends Component {
   componentDidMount() {
-    
+
   }
   render() {
     return (
-      <div>123</div>
+      <div>首页view-index</div>
     )
   }
   setNavigationBar = () => {

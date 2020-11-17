@@ -15,16 +15,16 @@ class NavigationBar extends Component {
     leftIcon: PropTypes.bool,
     rightIcon: PropTypes.bool,
     leftIconType: PropTypes.string
-  } 
+  }
   constructor() {
     super()
 
     this.state = {
-      
+
     }
   }
   componentDidMount() {
-    
+
   }
   render() {
     const {
@@ -46,7 +46,7 @@ class NavigationBar extends Component {
         <div className="navBar-fixed align-items">
           <div className="navBar-icon">
             {
-              leftIcon ? (<div className={getIconClass(leftIconType)} onClick={ this.navTo }></div>) : null
+              leftIcon ? (<div className={getIconClass(leftIconType)} onClick={this.navTo}></div>) : null
             }
           </div>
           <div className="navBar-title flex-1 align-items justify-center">
@@ -63,10 +63,10 @@ class NavigationBar extends Component {
     )
   }
   getNavigationBarInfo = (navInfo) => {
-    
+
   }
   navTo = () => {
-    this.props.history.push('/index')
+    this.props.history.push('/')
   }
 }
 
