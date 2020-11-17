@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 
-import Tabbar from '../../package/Tabbar/index'
+import Tabbar from '@/package/Tabbar/index'
 import NavigationBar from '../../package/NavigationBar/index'
 
 export default function TabbarHoc(WrapComponent) {
@@ -15,4 +15,4 @@ export default function TabbarHoc(WrapComponent) {
       )
     }
   }
-} 
+}

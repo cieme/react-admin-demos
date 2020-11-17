@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, { Component, Fragment, } from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { tabbar } from '../../router/tabbar'
 import './index.scss'
-console.log(tabbar);
 export default class Tabbar extends Component {
 
   render() {
@@ -14,7 +13,9 @@ export default class Tabbar extends Component {
           <div className="tabbar-item">发现</div>
           <div className="tabbar-item">我</div> */}
           <Router>
-            {tabbar.map((item, index) => (<Fragment key={`tabbar${index}`}><Route exact={true} path={item.path}><div className="tabbar-item">{item.text}</div></Route></Fragment>))}
+            {tabbar.map((item, index) => {
+              return <Fragment key={`tabbar${index}`}><Link to={item.path} className="tabbar-item"><div>{item.text}</div></Link></Fragment>
+            })}
           </Router>
         </div>
       </div>

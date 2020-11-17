@@ -27,7 +27,7 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
 const { Z_PARTIAL_FLUSH } = require('zlib');
-
+console.log('path :'+path.resolve(__dirname));
 const appPackageJson = require(paths.appPackageJson);
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -280,6 +280,7 @@ module.exports = function (webpackEnv) {
       },
     },
     resolve: {
+
       // This allows you to set a fallback for where webpack should look for modules.
       // We placed these paths second because we want `node_modules` to "win"
       // if there are any conflicts. This matches Node resolution mechanism.
@@ -306,6 +307,7 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@': path.resolve(__dirname, '../src/'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

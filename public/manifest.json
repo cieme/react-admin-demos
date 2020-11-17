@@ -35,16 +35,5 @@
         "component": "home"
       }
     }
-  },
-  "display": {
-    "backgroundColor": "#ffffff",
-    "titleBar": true,
-    "titleBarBackgroundColor": "#ff5073",
-    "titleBarTextColor": "#ffffff",
-    "pages": {
-      "Home": {
-        "titleBarText": "美柚"
-      }
-    }
   }
 }
