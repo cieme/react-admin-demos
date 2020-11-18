@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import store from '../store/index'
+import store from '@store/index'
 
 // hoc
-import TabbarHoc from '../hoc/tabbar'
+import TabbarHoc from '@hoc/tabbar'
 // import PageHoc from '../hoc/page'
 
 // component
-import Index from '../views/Index'
-import Mine from '../views/Mine'
-import AuthRoute from '../utils/authRoute'
+import Index from '@views/Index'
+import Mine from '@views/Mine'
+import AuthRoute from '@utils/authRoute'
 export default class AppRouter extends Component {
   // getUserConfirmation = (message, callback) => {
   //   const allowTransition = window.confirm(message)
@@ -25,8 +25,7 @@ export default class AppRouter extends Component {
         <Router>
           <Route exact={true} path="/" component={
             TabbarHoc(Index)
-          } >
-          </Route>
+          }></Route>
 
           <AuthRoute exact={true} path="/mine" component={
             TabbarHoc(Mine)

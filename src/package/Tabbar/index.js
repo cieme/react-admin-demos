@@ -1,6 +1,6 @@
 import React, { Component, Fragment, } from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import { tabbar } from '../../router/tabbar'
+import { tabbar } from '@router/tabbar'
 import './index.scss'
 export default class Tabbar extends Component {
 

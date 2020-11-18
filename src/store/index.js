@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from "redux";
-import { reducer } from "./reducer";
+import { reducer } from "@store/reducer";
 /**
  *
  * @param {*} state 之前仓库中的状态（数据）
